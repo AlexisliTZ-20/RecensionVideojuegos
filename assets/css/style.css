@@ -1,0 +1,216 @@
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 5px; /* Ajusta esto según la altura del header */
+    margin-bottom: 5px; /* Ajusta esto según la altura del footer */
+}
+
+/* Contenido principal */
+.main-content {
+    padding-top: 80px; /* Ajusta esto según la altura del header */
+    padding-bottom: 80px; /* Ajusta esto según la altura del footer */
+}
+
+/* Sección de contenido a la izquierda (video) */
+.content-left {
+    flex: 2;
+    max-width: 60%;
+}
+
+/* Sección de video */
+.video iframe,
+.video video {
+    width: 700px;
+    height: 395px;
+    border: none;
+    border-radius: 8px;
+}
+
+
+
+/* Eliminar la sección de capturas de pantalla */
+.screenshots {
+    display: none;
+}
+
+/* Sección de contenido a la derecha (imagen del juego, descripción, detalles y etiquetas) */
+.content-right {
+    flex: 1;
+    max-width: 35%;
+}
+
+/* Imagen del juego */
+.content-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la descripción y detalles */
+.content-right p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Estilo para las etiquetas */
+.tags {
+    margin-top: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #08d684;
+    color: #333; /* Color del texto */
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: background-color 0.3s; /* Opcional: transición suave del color de fondo */
+}
+
+.tag:hover {
+    color: #333; /* Mantiene el color del texto constante */
+    background-color: #06b45d; /* Cambia el color de fondo al pasar el cursor, si lo deseas */
+}
+
+.review-heading {
+    color: #06b45d; /* Rojo */
+}
+
+.username-heading {
+    color: #ffffff;
+}
+
+.recommended {
+    color: #28a745; /* Verde */
+}
+
+.not-recommended {
+    color: #dc3545; /* Rojo */
+}
+
+.recommended .fa-thumbs-up,
+.not-recommended .fa-thumbs-down {
+    color: inherit; /* Asegura que el ícono tenga el mismo color que el texto */
+}
+
+/* Reseñas y formulario de añadir reseñas */
+.reviews-add-review {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+}
+
+.reviews {
+    flex: 2;
+    border: 1px solid #08d684;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow-y: auto; /* Permite desplazamiento si hay muchas reseñas */
+}
+
+.reviews .review {
+    border: 1px solid #08d684;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.reviews .review h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.reviews .review p {
+    margin: 5px 0;
+}
+
+/* Formulario de añadir reseñas */
+.add-review {
+    flex: 1;
+    border: 1px solid #08d684;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #272727;
+    max-width: 400px; /* Establece un ancho máximo */
+    min-width: 300px; /* Establece un ancho mínimo */
+    max-height: 400px; /* Establece una altura máxima para evitar que crezca demasiado */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura máxima */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+.add-review h2 {
+    margin-top: 0;
+}
+
+.add-review label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.add-review input[type="text"],
+.add-review input[type="radio"],
+.add-review textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.add-review input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-review input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el header para asegurar que se fije en la parte superior */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el header esté encima de otros contenidos */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 80px; /* Ajusta según la altura del header */
+}
+
+/* Estilo para el footer para asegurar que se fije en la parte inferior */
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el footer esté encima de otros contenidos */
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    height: 80px; /* Ajusta según la altura del footer */
+}
+
+
+/* Espacio para el header y footer en el cuerpo */
+body {
+    padding-top: 80px; /* Ajusta esto según la altura del header */
+    padding-bottom: 80px; /* Ajusta esto según la altura del footer */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}

@@ -1,0 +1,103 @@
+/* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+}
+
+h1 {
+    text-align: center;
+    color: #00ff99;
+    text-shadow: 0 0 10px #00ff99;
+    margin: 20px 0;
+}
+
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.game {
+    position: relative;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    border: 2px solid #00ff99;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+    height: 225px; /* Ajusta la altura del contenedor para que no sea tan alto */
+}
+
+/* Imagen del juego */
+.game img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Título del juego */
+.game h2 {
+    color: #00ff99;
+    margin: 10px 0 0;
+    font-size: 18px;
+    transition: transform 0.3s; /* Añadido para suavizar el desplazamiento del título */
+    position: relative;
+    z-index: 1; /* Asegura que el título esté sobre la ventana emergente */
+}
+
+/* Enlace del título */
+.game a {
+    text-decoration: none;
+    color: #00ff99;
+    transition: color 0.3s;
+}
+
+.game a:hover {
+    color: #00cccc;
+}
+
+/* Ventana emergente de información */
+.game .info-popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fondo ligeramente oscuro para mejorar la legibilidad */
+    color: #ffffff;
+    border-left: 2px solid #00ff99;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    text-align: left;
+    z-index: 10;
+    box-sizing: border-box;
+    /* Añadido para permitir el desplazamiento si el contenido es largo */
+}
+
+/* Mostrar ventana emergente al pasar el cursor */
+.game:hover .info-popup {
+    display: block;
+}
+
+/* Desplazamiento del título al pasar el cursor */
+.game:hover h2 {
+    transform: translateX(-90px); /* Mueve el título 30px a la izquierda para evitar que se superponga con la ventana emergente */
+}
+
+/* Estilo para el texto dentro de la ventana emergente */
+.info-popup p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
