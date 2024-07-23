@@ -1,5 +1,5 @@
 <?php
-include('../../db/config.php');
+include('../db/config.php');
 
 $sql = "SELECT * FROM games";
 $result = $conn->query($sql);
@@ -11,7 +11,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Juegos</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Lista de Juegos</h1>
@@ -31,8 +31,8 @@ $result = $conn->query($sql);
                 <td><?php echo htmlspecialchars($row['developer']); ?></td>
                 <td><?php echo htmlspecialchars($row['publisher']); ?></td>
                 <td>
-                    <a href="edit_game.php?id=<?php echo $row['id']; ?>">Edit</a>
-                    <a href="delete_game.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this game?');">Delete</a>
+                    <a href="edit_game.php?id=<?php echo $row['id']; ?>">Editar</a>
+                    <a href="delete_game.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Está seguro de eliminar este juego?');">Eliminar</a>
                 </td>
             </tr>
             <?php endwhile; ?>

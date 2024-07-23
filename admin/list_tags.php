@@ -1,5 +1,5 @@
 <?php
-include('../../db/config.php');
+include('../db/config.php');
 
 $sql = "SELECT * FROM tags";
 $result = $conn->query($sql);
@@ -11,7 +11,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Etiquetas</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Lista de Etiquetas</h1>
@@ -28,7 +28,7 @@ $result = $conn->query($sql);
                 <td><?php echo htmlspecialchars($row['name']); ?></td>
                 <td>
                     <a href="edit_tag.php?id=<?php echo $row['id']; ?>">Editar</a>
-                    <a href="delete_tag.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this tag?');">Delete</a>
+                    <a href="delete_tag.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Está seguro de eliminar esta etiqueta?');">Eliminar</a>
                 </td>
             </tr>
             <?php endwhile; ?>

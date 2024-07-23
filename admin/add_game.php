@@ -1,5 +1,5 @@
 <?php
-include('../../db/config.php');
+include('../db/config.php');
 
 function getYoutubeEmbedUrl($url) {
     $pattern = '/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/';
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $youtube_link = $_POST['youtube_link'];
     $selected_tags = $_POST['tags'] ?? [];
 
-    $target_dir = "../assets/images/";
+    $target_dir = "assets/images/";
     $target_file_image = $target_dir . basename($image);
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file_image);
 
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $conn->query($sql_tag);
         }
 
-        header("Location: ../../admin/success.php?message=Juego añadido correctamente");
+        header("Location: ../adsuccess.php?message=Juego añadido correctamente");
         exit();
     } else {
         $message = 'Error: ' . $conn->error;
@@ -69,7 +69,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir Juego</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .popup {
@@ -146,7 +146,7 @@ $conn->close();
             <div id="selected-tags"></div>
         </div>
         
-        <input type="submit" value="Add Game">
+        <input type="submit" value="Añadir Juego">
     </form>
 
     <div class="preview-container">

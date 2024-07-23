@@ -10,7 +10,7 @@
     <footer>
         <div class="particle-container-footer">
         </div>
-        <p>2024 Reseñas de Videojuegos</p>
+        <p>2024 - Reseñas de Videojuegos</p>
     </footer>
 
     <script>

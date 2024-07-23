@@ -1,5 +1,5 @@
 <?php
-include('../../db/config.php');
+include('../db/config.php');
 
 $tag_id = $_GET['id'] ?? 0;
 $tag = [];
@@ -36,7 +36,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Tag</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Edit Tag</h1>

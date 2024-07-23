@@ -32,7 +32,7 @@ $message = isset($_GET['message']) ? htmlspecialchars($_GET['message']) : 'Opera
 <body>
     <div class="success-message">
         <p><?php echo $message; ?></p>
-        <p><a href="game/add_game.php">Añade otro juego</a></p>
+        <p><a href="add_game.php">Añade otro juego</a></p>
         <p><a href="index.php">Volver al Inicio</a></p>
     </div>
 </body>

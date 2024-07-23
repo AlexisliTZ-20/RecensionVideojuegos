@@ -14,7 +14,8 @@
         <div class="particle-container"></div>
         <nav>
             <ul>
-                <li><a href="../videojuegos/index.php">Home</a></li>
+                <li><a href="../videojuegos/index.php">Inicio</a></li>
+                <li><a href="../videojuegos/index.php"> </a></li>
             </ul>
         </nav>
     </header>

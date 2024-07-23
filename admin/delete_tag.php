@@ -1,5 +1,5 @@
 <?php
-include('../../db/config.php');
+include('../db/config.php');
 
 if (isset($_GET['id'])) {
     $tag_id = $_GET['id'];

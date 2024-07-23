@@ -9,10 +9,10 @@
 <body>
     <h1>Panel de Administrador</h1>
     <ul>
-        <li><a href="game/add_game.php">Añadir Videojuego</a></li>
-        <li><a href="tag/add_tag.php">Añadir Categoría</a></li>
-        <li><a href="game/list_games.php">Listar Videojuegos</a></li>
-        <li><a href="tag/list_tags.php">Listar Categorías</a></li>
+        <li><a href="add_game.php">Añadir Videojuego</a></li>
+        <li><a href="add_tag.php">Añadir Categoría</a></li>
+        <li><a href="list_games.php">Listar Videojuegos</a></li>
+        <li><a href="list_tags.php">Listar Categorías</a></li>
     </ul>
 </body>
 </html>

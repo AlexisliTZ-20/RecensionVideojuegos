@@ -1,5 +1,5 @@
 <?php
-include('../../db/config.php');
+include('../db/config.php');
 
 $game_id = $_GET['id'] ?? 0;
 $game = [];
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Subir la imagen 
     if (!empty($image)) {
-        $target_dir = "../assets/images/";
+        $target_dir = "assets/images/";
         $target_file_image = $target_dir . basename($image);
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file_image);
     } else {
@@ -88,7 +88,7 @@ function getYoutubeEmbedUrl($url) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Game</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Edit Game</h1>
