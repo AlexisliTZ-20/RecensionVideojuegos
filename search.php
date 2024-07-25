@@ -1,5 +1,7 @@
 <?php
 include('db/config.php');
+
+$query = htmlspecialchars($_GET['query'], ENT_QUOTES, 'UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -7,29 +9,20 @@ include('db/config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Games</title>
+    <title>Search Results</title>
     <link rel="stylesheet" href="assets/css/indexstyles.css">
 </head>
 <body>
     <?php include('templates/header.php'); ?>
-
-
-    <br><br><br><br>
-    <div class="search-bar">
-        <form action="search.php" method="GET">
-            <input type="text" name="query" placeholder="Search for a game..." required>
-            <button type="submit">Search</button>
-        </form>
-    </div>
-    
-    <h1>Video Games</h1>
+<br><br><br><br>
+    <h1>Search Results for "<?php echo $query; ?>"</h1>
     <div class="games">
         <?php
-        $sql = "SELECT * FROM games";
-        $result = $conn->query($sql);
+        $searchSql = "SELECT * FROM games WHERE title LIKE '%$query%' OR description LIKE '%$query%'";
+        $searchResult = $conn->query($searchSql);
 
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
+        if ($searchResult->num_rows > 0) {
+            while($row = $searchResult->fetch_assoc()) {
                 echo "<div class='game'>";
                 $imagePath = "assets/images/" . htmlspecialchars($row['image'], ENT_QUOTES, 'UTF-8');
                 if (file_exists($imagePath)) {
@@ -46,7 +39,7 @@ include('db/config.php');
                 echo "</div>";
             }
         } else {
-            echo "<p>No games found.</p>";
+            echo "<p>No results found for \"$query\".</p>";
         }
 
         $conn->close();

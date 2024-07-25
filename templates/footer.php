@@ -8,8 +8,7 @@
 </head>
 <body>
     <footer>
-        <div class="particle-container-footer">
-        </div>
+        <div class="particle-container-footer"></div>
         <p>2024 - Reseñas de Videojuegos</p>
     </footer>
 
